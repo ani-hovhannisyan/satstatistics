@@ -1,0 +1,11 @@
+This file tells how to use this scripts:
+
+1. Download git repositories, and store in accessable path:
+2. Put single repository relative path in scrap_git_data.py REPO_PATH variable and run this script.
+    - Script will produce java_only_commits.json which contains commit hash and java files names in json format.
+3. Run analyse_via_pmd.py to analyse inital state of any version of repository.
+    - Script will produce pmd_date.json which shows repo url, analysed files, reports, and time of run.
+4. Run commits_to_mjava.py script to run FinerGit on all commits for specific repo.
+    * you should run this script inside repository where inital .git is located.
+    - Script will checkout to initial java commit and run finer git, so next step is to run 2nd pmd on that to collect data.
+    - Script will result finergit_repo.json which has repo name, files before after and timing of running.

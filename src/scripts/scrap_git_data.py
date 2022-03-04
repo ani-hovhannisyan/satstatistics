@@ -49,6 +49,8 @@ def main():
     all_commits = collect_all_commits()
     # Collect only commits with .java file changes
     java_commits = collect_java_commits(all_commits)
+
+    # TODO: Change this to be url via this: git config --get remote.origin.url
     name = REPO_PATH.split("/")[len(REPO_PATH.split("/")) - 1]
     resultsJson["repo"][name] = java_commits
     print("Final results json is:", resultsJson)
